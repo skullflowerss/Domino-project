@@ -90,6 +90,7 @@ function process(img, op){
 
 }
 
+
 function dominoTile(x, y, s, c){
 
   var colorbg, colordot;
@@ -118,31 +119,29 @@ function dominoTile(x, y, s, c){
   vertex(x,y+s);
   endShape(CLOSE);
   stroke(colordot);
-
+  fill(colordot);
   if(op == 1){
-    fill(255);
+
     ellipse(x+s/2,y+s/2,ss,ss);
   }
   if(op == 2){
-    fill(255);
+
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
     ellipse(x+s*0.2,y+s*0.8,ss,ss);
   }
   if(op == 3){
-    fill(255);
+
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
     ellipse(x+s/2,y+s/2,ss,ss);
     ellipse(x+s*0.2,y+s*0.8,ss,ss);
   }
   if(op == 4){
-    fill(255);
     ellipse(x+s*0.2,y+s*0.2,ss,ss);
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
     ellipse(x+s*0.2,y+s*0.8,ss,ss);
     ellipse(x+s*0.8,y+s*0.8,ss,ss);
   }
   if(op == 5){
-    fill(255);
     ellipse(x+s*0.2,y+s*0.2,ss,ss);
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
     ellipse(x+s/2,y+s/2,ss,ss);
@@ -150,7 +149,6 @@ function dominoTile(x, y, s, c){
     ellipse(x+s*0.8,y+s*0.8,ss,ss);
   }
   if(op == 6){
-    fill(255);
     ellipse(x+s*0.2,y+s*0.2,ss,ss);
     ellipse(x+s*0.2,y+s/2,ss,ss);
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
@@ -159,7 +157,6 @@ function dominoTile(x, y, s, c){
     ellipse(x+s*0.8,y+s*0.8,ss,ss);
   }
   if(op == 7){
-    fill(255);
     ellipse(x+s*0.2,y+s*0.2,ss,ss);
     ellipse(x+s*0.2,y+s/2,ss,ss);
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
@@ -169,7 +166,6 @@ function dominoTile(x, y, s, c){
     ellipse(x+s*0.8,y+s*0.8,ss,ss);
   }
   if(op == 8){
-    fill(255);
     ellipse(x+s*0.2,y+s*0.2,ss,ss);
     ellipse(x+s*0.2,y+s/2,ss,ss);
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
@@ -180,7 +176,6 @@ function dominoTile(x, y, s, c){
     ellipse(x+s*0.8,y+s*0.8,ss,ss);
   }
   if(op == 9){
-      fill(255);
     ellipse(x+s*0.2,y+s*0.2,ss,ss);
     ellipse(x+s*0.2,y+s/2,ss,ss);
     ellipse(x+s*0.8,y+s*0.2,ss,ss);
