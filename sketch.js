@@ -11,6 +11,13 @@ function setup(){
   createElement("h2","Domino piece size");
   dominoSize = createSlider(10,50,5,1);
   dominoSize.changed(handle);
+
+  createElement("h2","invert the colors?=?");
+  option = createSelect();
+  option.option("white");
+  option.option("black");
+  option.changed(handle);
+
   noStroke();
   noLoop();
 }
@@ -60,7 +67,7 @@ function process(img, op){
         var b = img.pixels[index+2];
 
         var brightness = (r+g+b)/3;
-      dominoTile(x,y,size,brightness);
+        dominoTile(x,y,size,brightness);
       }
     }
   }
@@ -74,7 +81,7 @@ function process(img, op){
           var b = img.pixels[index+2];
 
           var brightness = (r+g+b)/3;
-        dominoTile(x,y,size,brightness);
+          dominoTile(x,y,size,brightness);
         }
       }
 
@@ -84,14 +91,25 @@ function process(img, op){
 }
 
 function dominoTile(x, y, s, c){
+
+  var colorbg, colordot;
+  if(option.value() == "white"){
+    colorbg = 255;
+    colordot = 0;
+  }
+
+  if(option.value() == "black"){
+    colorbg = 0;
+    colordot = 255;
+  }
   var b = map(c,0,255,1,8);
   b = parseInt(b);
   op = b;
   var ss = int(s/10);
-  stroke(255,100);
+  stroke(colordot,100);
   strokeWeight(0.2);
 
-  fill(0);
+  fill(colorbg);
 
   beginShape();
   vertex(x,y);
@@ -99,7 +117,7 @@ function dominoTile(x, y, s, c){
   vertex(x+s,y+s);
   vertex(x,y+s);
   endShape(CLOSE);
-  stroke(255);
+  stroke(colordot);
 
   if(op == 1){
     fill(255);
