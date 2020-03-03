@@ -1,2 +1,0 @@
-# Domino-project
-Dominos
